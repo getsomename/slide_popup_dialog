@@ -29,10 +29,11 @@ class _SlideDialogState extends State<SlideDialog> {
     final deviceHeight = MediaQuery.of(context).size.height;
 
     final defalutHeight = deviceHeight / 1.5;
+    final height = widget.height ?? defalutHeight;
 
     return AnimatedPadding(
       padding: MediaQuery.of(context).viewInsets +
-          EdgeInsets.only(top: deviceHeight / 3.0 + _currentPosition),
+          EdgeInsets.only(top: height / 2 + _currentPosition),
       duration: Duration(milliseconds: 100),
       curve: Curves.decelerate,
       child: MediaQuery.removeViewInsets(
@@ -44,7 +45,7 @@ class _SlideDialogState extends State<SlideDialog> {
         child: Center(
           child: Container(
             width: deviceWidth,
-            height: widget.height ?? defalutHeight,
+            height: height,
             child: Material(
               color: widget.backgroundColor ??
                   Theme.of(context).dialogBackgroundColor,
