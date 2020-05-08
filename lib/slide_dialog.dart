@@ -33,7 +33,7 @@ class _SlideDialogState extends State<SlideDialog> {
 
     return AnimatedPadding(
       padding: MediaQuery.of(context).viewInsets +
-          EdgeInsets.only(top: height / 2 + _currentPosition),
+          EdgeInsets.only(top: (deviceHeight - height) + _currentPosition),
       duration: Duration(milliseconds: 100),
       curve: Curves.decelerate,
       child: MediaQuery.removeViewInsets(
@@ -42,7 +42,8 @@ class _SlideDialogState extends State<SlideDialog> {
         removeRight: true,
         removeBottom: true,
         context: context,
-        child: Center(
+        child: Container(
+          alignment: Alignment.bottomCenter,
           child: Container(
             width: deviceWidth,
             height: height,

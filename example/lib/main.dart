@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _showDialog() {
     slideDialog.showSlideDialog(
       context: context,
+      height: 400,
       child: Text("Hello World"),
       // barrierColor: Colors.white.withOpacity(0.7),
       // pillColor: Colors.red,
